@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Ivan R.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    .wrapper {
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+    .text {
+      position: absolute;
+      left: 0;
+      top: 47.5%;
+      left: 33.33333%;
+      transform: translate(-50%, -50%);
+      color: rgba(255, 255, 255, .9);
+      font: 100 4vw/1 monospace;
+      transition: .5s ease font-size, .5s ease left, 1s linear color;
+    }
+    @media (max-width: 1000px) {
+      .text { font-size: 40px }
+    }
+    @media (max-width: 750px) {
+      .text { left: 50% }
+    }
+  </style>
+</head>
+<body>
+  <!-- Сайта ещё нет, а ты уже в код лезешь? Ну и извращенец же ты... -->
+  <div class="wrapper">
+    <div class="text" id="text">rybnikov.pro</div>
+  </div>
+  <script>
+    'use strict';
+
+    const random = (items) => items[Math.round(Math.random() * (items.length - 1))];
+
+    const text = document.querySelector('#text');
+    const colors = ['lightgoldenrodyellow', 'yellowgreen', 'mediumorchid', 'gold', 'darkred', 'lightseagreen', 'aquamarine', 'sienna', 'deeppink', 'mediumspringgreen', 'lightpink', 'magenta', 'mediumseagreen'];
+
+    setInterval(() => {
+      text.style.color = random(colors);
+    }, 1100);
+  </script>
+</body>
+</html>
